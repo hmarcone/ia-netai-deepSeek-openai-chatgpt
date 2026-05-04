@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.AddOpenAI();
 
-builder.Services.AddScoped<ChatService>();
+builder.Services.AddSingleton<ChatService>();
+builder.Services.AddSingleton<RecipeService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
