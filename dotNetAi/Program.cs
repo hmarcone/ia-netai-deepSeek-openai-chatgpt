@@ -12,6 +12,13 @@ builder.Services.AddSingleton<ChatService>();
 builder.Services.AddSingleton<RecipeService>();
 builder.Services.AddSingleton<ImageService>();
 
+builder.Services.AddCors(options => options.AddDefaultPolicy(builder =>
+{
+	builder.AllowAnyOrigin()
+		.AllowAnyMethod()
+		.AllowAnyHeader();
+}));
+
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
